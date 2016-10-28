@@ -62,12 +62,12 @@ public void commandAction(Command c,Displayable d)
             if(n< liczba)
             {
                 alert=new Alert("Nie zgadłeś","Wpisz  większą  liczbę ",null,AlertType.WARNING);
-		// Wyświetl  błąd  jeśli  wpisałeś  liczbę  mniejszą niż  wylosowana
+		// Wyświetl  komunikat  jeśli  wpisałeś  liczbę  mniejszą niż  wylosowana
             }
             else if(n>liczba)
             {
                 alert=new Alert("Nie  zgadłeś","Wpisz  mniejszą  liczbę ",null,AlertType.WARNING);
-		// Wyświetl  błąd  jeśli  wpisałeś  liczbę  większą niż  wylosowana
+		// Wyświetl  komunikat  jeśli  wpisałeś  liczbę  większą niż  wylosowana
             }
             else
             {
