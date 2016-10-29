@@ -6,17 +6,17 @@
 package zadanie3;
 
 import javax.microedition.midlet.*;	// Zawiera  definicje  klasy  MIDlet 
-import javax.microedition.lcdui.*;	// Zawiera  definicjƒô  dla  element√≥w  interfejsu  u≈ºytkownika
-import java.util.*;		// Zawiera  definicjƒô   obiektu  Random
+import javax.microedition.lcdui.*;	// Zawiera  definicjÍ  dla  elementÛw  interfejsu  uøytkownika
+import java.util.*;		// Zawiera  definicjÍ   obiektu  Random
 
 public class Midlet extends MIDlet implements CommandListener
 {
 
     Form form;				// Forma
-    Display display;			// Wy≈õwietlanie  na  ekranie
-    TextField txtliczba;		// Pole  tekstowe  do  wy≈õwietlania  informacji o  liczbie
-    Command cmdCheck;                   // Polecenie  do  zatwierdzenia  przez  u≈ºytkownika
-    Command cmdExit;                    // Polecenie  do  zatwierdzenia  przez  u≈ºytkownika
+    Display display;			// Wyúwietlanie  na  ekranie
+    TextField txtliczba;		// Pole  tekstowe  do  wyúwietlania  informacji o  liczbie
+    Command cmdCheck;                   // Polecenie  do  zatwierdzenia  przez  uøytkownika
+    Command cmdExit;                    // Polecenie  do  zatwierdzenia  przez  uøytkownika
     int liczba;          // liczba
     int licznik;        // licznik
     
@@ -24,18 +24,18 @@ public void startApp()
 {
     liczba =new Random().nextInt(101);		// Generowanie losowej  liczby
     licznik=0;					// Uruchomienie  licznika
-    form=new Form("Midlet  Zgadywanka");	// Zainicjowanie  formy  z  tytu≈Çem
-    display=Display.getDisplay(this);		// Wy≈õwietlanie  na  ekranie
-    txtliczba=new TextField("Wpisz  liczbƒô od  0  do  100)", "", 10, TextField.NUMERIC);  // Wprowadzenie  liczby przez  u≈ºytkownika
-    cmdCheck=new Command("Sprawd≈∫",Command.OK,1);	// Wyb√≥r  polecenia
-    cmdExit=new Command("Wyjd≈∫",Command.EXIT,3);	// Wybr√≥r  polecenia
+    form=new Form("Midlet  Zgadywanka");	// Zainicjowanie  formy  z  tytu≥em
+    display=Display.getDisplay(this);		// Wyúwietlanie  na  ekranie
+    txtliczba=new TextField("Wpisz  liczbÍ od  0  do  100)", "", 10, TextField.NUMERIC);  // Wprowadzenie  liczby przez  uøytkownika
+    cmdCheck=new Command("Sprawdü",Command.OK,1);	// WybÛr  polecenia
+    cmdExit=new Command("Wyjdü",Command.EXIT,3);	// WybrÛr  polecenia
     	
     form.append(txtliczba);			// Dodanie  pola  tektowego  do  formy
-    form.addCommand(cmdCheck);		// Polecenie  sprawd≈∫
-    form.addCommand(cmdExit);		// Polecenie  zako≈Ñczenia  pracy  aplikacji
+    form.addCommand(cmdCheck);		// Polecenie  sprawdü
+    form.addCommand(cmdExit);		// Polecenie  zakoÒczenia  pracy  aplikacji
     
-    form.setCommandListener(this);		// Dodanie  polece≈Ñ
-    display.setCurrent(form);		// Wy≈õwietlenie   formy
+    form.setCommandListener(this);		// Dodanie  poleceÒ
+    display.setCurrent(form);		// Wyúwietlenie   formy
 }
 
 
@@ -50,39 +50,39 @@ public void destroyApp(boolean unconditional)
 
 public void commandAction(Command c,Displayable d)
     {
-        if(c==cmdCheck)				// Sprawd≈∫  czy zosta≈Ço  wybrane  okre≈õlone polecenie
+        if(c==cmdCheck)				// Sprawdü  czy zosta≥o  wybrane  okreúlone polecenie
         {
-            if(txtliczba.getString().trim().length()==0)// Wybierz je≈õli nie wpisano  danych  wej≈õciowych
+            if(txtliczba.getString().trim().length()==0)// Wybierz jeúli nie wpisano  danych  wejúciowych
             {
                 return;
             }
             Alert alert=null;
-            int n=Integer.parseInt(txtliczba.getString());// Zatwierdzenie  wylosowanej  liczby (liczba  ukryta przed uøytkownikiem)  
-            licznik++;					// zwiƒôkszenie stanu  licznika
+            int n=Integer.parseInt(txtliczba.getString());// Zatwierdzenie  wylosowanej  liczby (liczba  ukryta przed uüytkownikiem)  
+            licznik++;					// zwiÍkszenie stanu  licznika
             if(n< liczba)
             {
-                alert=new Alert("Nie zgad≈Çe≈õ","Wpisz  wiƒôkszƒÖ  liczbƒô ",null,AlertType.WARNING);
-		// Wy≈õwietl  komunikat  je≈õli  wpisa≈Çe≈õ  liczbƒô  mniejszƒÖ ni≈º  wylosowana
+                alert=new Alert("Nie zgad≥eú","Wpisz  wiÍkszπ  liczbÍ ",null,AlertType.WARNING);
+		// Wyúwietl  komunikat  jeúli  uøytkownik  wybra≥  liczbÍ  mniejszπ niø  wylosowana
             }
             else if(n>liczba)
             {
-                alert=new Alert("Nie  zgad≈Çe≈õ","Wpisz  mniejszƒÖ  liczbƒô ",null,AlertType.WARNING);
-		// Wy≈õwietl  komunikat  je≈õli  wpisa≈Çe≈õ  liczbƒô  wiƒôkszƒÖ ni≈º  wylosowana
+                alert=new Alert("Nie  zgad≥eú","Wpisz  mniejszπ  liczbÍ ",null,AlertType.WARNING);
+		// Wyúwietl  komunikat  jeúli  uøytkownik wybra≥  liczbÍ  wiÍkszπ niø  wylosowana
             }
             else
             {
-                alert=new Alert("Trafi≈Çe≈õ"," Brawo  odgadniƒôte w "+ licznik +" ruchach.",null,AlertType.INFO);
-			// Wy≈õwietl  je≈õli  u≈ºytkownik  wybra≈Ç  odpowiedniƒÖ liczbƒô
+                alert=new Alert("Trafi≥eú"," Brawo  odgadniÍte w "+ licznik +" ruchach.",null,AlertType.INFO);
+			// Wyúwietl komunikat jeúli  uøytkownik  wybra≥  odpowiedniπ liczbÍ
 			
-                liczba=new Random().nextInt(101);	// Generowanie  losowej  liczby  
+                liczba=new Random().nextInt(101);// Generowanie  losowej  liczby  
                 licznik=0;			// Zresetuj  licznik
             }
-            alert.setTimeout(Alert.FOREVER);   // Wy≈õwietl  komunikat  w   przypadku  zako≈Ñczenia  pracy  aplikacji  
-            display.setCurrent(alert);	// Wy≈õwietl  komunikat
+            alert.setTimeout(Alert.FOREVER); // Wyúwietl  komunikat  w   przypadku  zakoÒczenia  pracy  aplikacji  
+            display.setCurrent(alert);	// Wyúwietl  komunikat
         }
-        if(c==cmdExit)      //  Sprawd≈∫  czy zosta≈Ço  wybrane  okre≈õlone polecenie
+        if(c==cmdExit)      //  Sprawdü  czy zosta≥o  wybrane  okreúlone polecenie
         {
-            destroyApp(true);		// Usu≈Ñ  obiekt MIDlet je≈õli  wybra≈Çe≈õ  polecenie EXIT
+            destroyApp(true);		// UsuÒ  obiekt MIDlet jeúli  wybra≥eú  polecenie EXIT
         }
         
     }
