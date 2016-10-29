@@ -57,7 +57,7 @@ public void commandAction(Command c,Displayable d)
                 return;
             }
             Alert alert=null;
-            int n=Integer.parseInt(txtliczba.getString());// Wprowadzenie  i  przeparsowanie  liczby  wpisanej  przez  użytkownika
+            int n=Integer.parseInt(txtliczba.getString());// Zatwierdzenie  wylosowanej  liczby (liczba  ukryta przed u�ytkownikiem)  
             licznik++;					// zwiększenie stanu  licznika
             if(n< liczba)
             {
